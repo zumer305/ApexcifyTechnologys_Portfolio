@@ -644,3 +644,55 @@ body {
   transform: translateY(-3px);
   color: #6aa8ff;
 }
+/* Uses your :root theme variables: --brand, --brand-alt, --text, --card, --glass, --shadow */
+.certs-container { max-width: 980px; margin: 0 auto; padding: 2rem 1rem; color: var(--text); }
+
+.certs-paragraph {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+}
+
+/* Buttons row */
+.certs-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Primary gradient button */
+.cert-btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #041124;               /* dark text on gradient button */
+  background: linear-gradient(135deg, var(--brand), var(--brand-alt));
+  box-shadow: 0 8px 20px rgba(106,168,255,0.12);
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+
+/* Outline (secondary) button */
+.cert-btn.btn-outline {
+  background: transparent;
+  color: var(--brand);
+  border: 2px solid rgba(106,168,255,0.18);
+  box-shadow: none;
+}
+
+/* Hover / active */
+.cert-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(106,168,255,0.16); }
+.cert-btn.btn-outline:hover { background: linear-gradient(135deg, rgba(106,168,255,0.06), rgba(103,240,178,0.04)); color: #fff; border-color: transparent; }
+
+/* Small screens */
+@media (max-width: 560px) {
+  .certs-actions { flex-direction: column; align-items: stretch; }
+  .cert-btn { width: 100%; text-align: center; }
+}
