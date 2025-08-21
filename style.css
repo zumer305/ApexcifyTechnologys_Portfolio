@@ -387,6 +387,56 @@ body {
 .about-img img:hover {
   transform: scale(1.05);
 }
+/* ✅ Responsive Design for About Section */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column; /* Stack vertically */
+    text-align: center;
+  }
+
+  .about-text {
+    order: 2; /* Text neeche le aao */
+  }
+
+  .about-img {
+    order: 1; /* Image upar dikhai de */
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section {
+    padding: 50px 5%; /* kam padding for mobiles */
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .about-actions .btn {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .about-img img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 
 
 
@@ -448,7 +498,43 @@ body {
   }
 }
 
+/* ✅ Responsive Design for Skills Section */
+@media (max-width: 992px) {
+  #skills {
+    padding: 60px 8%; /* thoda kam padding for tablet */
+  }
 
+  #skills h2 {
+    font-size: 28px;
+  }
+
+  .skill .label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  #skills {
+    padding: 40px 5%; /* compact padding for mobile */
+  }
+
+  #skills h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .skill .label {
+    flex-direction: column; /* label aur % neeche dikhayenge */
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 14px;
+  }
+
+  .skill .bar {
+    height: 8px; /* thinner bar for small screens */
+  }
+}
+/* ................ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 cards ek row me */
@@ -537,8 +623,55 @@ body {
   color: #fff;
 }
 
+/* ✅ Responsive Grid for Projects */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 cards per row */
+    gap: 25px;
+  }
 
+  .project-media img {
+    height: 180px; /* thoda chhota image height */
+  }
 
+  .project-body h3 {
+    font-size: 18px;
+  }
+
+  .project-body p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Mobile: 1 card per row */
+    gap: 20px;
+  }
+
+  .project-media img {
+    height: 160px;
+  }
+
+  .project-body {
+    padding: 15px;
+  }
+
+  .project-body h3 {
+    font-size: 16px;
+  }
+
+  .project-body p {
+    font-size: 13px;
+  }
+
+  .btn-sm {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+}
+
+/* ............ */
 .profile-section {
   padding: 80px 0;
   background: linear-gradient(180deg, #0b1220, #0f1629);
@@ -613,7 +746,56 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* Responsive Fix */
+@media (max-width: 880px) {
+  .profile-cards {
+    grid-template-columns: 1fr; /* Tablet aur small screens: single column */
+    gap: 24px;
+  }
 
+  .profile-section {
+    padding: 60px 0;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card h2 {
+    font-size: 1.15rem;
+  }
+
+  .card p, 
+  .card li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-section {
+    padding: 50px 0;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p, 
+  .card li {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .card ul li {
+    margin-bottom: 4px;
+  }
+}
+/* .............. */
 .contact-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
